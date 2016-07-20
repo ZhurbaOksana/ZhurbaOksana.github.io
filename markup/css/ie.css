@@ -1,0 +1,12 @@
+body{min-width:980px;}
+#header,
+.banner-holder{max-width:940px;}
+#footer .footer-holder{max-width:944px;}
+#main{max-width:940px;}
+#main .col:first-child + *,
+#main .col:first-child + * + * + *,
+#main .col:first-child + * + * + * + * + * {
+    float:right;
+    box-sizing:border-box;
+    margin:0 27px 0 0;
+}

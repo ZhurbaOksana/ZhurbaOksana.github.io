@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/media-queries.css" rel="stylesheet" type="text/css">
+<!--Ползунок-->
+<link href="http://www.xiper.net/examples/css/examples.css" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.ui.timepicker.js?v=0.3.3"></script>
+<script src="js/calendar_ru.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/jquery.custom-radio-checkbox.js"></script>
+<script src="js/demo.js"></script>
+  <script>
+    $(document).ready(function(e) {
+      $("#search-block-form .form-item input").focus(function(){
+        $("#search-block-form").addClass("focus-active");
+          })
+      .blur(function(){
+        $("#search-block-form").removeClass("focus-active");
+      });
+    });
+  </script>
+  <!--[if lt IE 9]>
+  <link href="css/ie.css" rel="stylesheet">
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	 <script src="js/ie.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  </head>
+  <body>
+   <div id="wrapper">
+      <header id="header" class="container">
+       <h1 class="logo"><a href="#">Название компании</a></h1>
+          <form action="#" method="post" id="search-block-form">
+            <span>Поиск по базе</span>
+            <div class="form-item">
+              <input type="text" name="" value="" size="15" maxlength="128" placeholder="">
+            </div>
+            <div class="form-actions">
+              <input type="submit" id="edit-submit" name="op" value="" class="form-submit">
+            </div>
+        </form>
+      <div class="top-box">
+        <span>Руководитель отдела Название:</span>
+        <span class="name">Фамилия Имя Отчество</span>
+        <div class="link-box">
+          <a href="#">Настройки</a>
+          <a href="#">Выйти</a>
+        </div>
+      </div> 
+     </header>
+     <div id="main" class="container">
+     <div class="requests">
+       <h2>Запросы клиентов</h2>
+        <nav class="navigation">
+          <ul>
+           <li><a href="#"><span>База объектов</span></a></li>
+            <li><a href="#"><span>Недвижимость</span></a></li>
+            <li><a href="#"><span>Услуги</span></a></li>
+            <li><a href="#"><span>Потенциальные клиенты</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="search-form">
+         <h2>Новостройки</h2>
+         <form action="#" method="post" class="main-form">
+           <div class="row">
+             <div class="fild">
+               <span>Новостройки</span>
+                 <div class="form-item">
+                  <select name="house_id" id="house_id" tabindex="1">
+                    <option>-- Выберите --</option>
+                    <option>ЖК Квартал 7</option>
+                    <option>ЖК Квартал 7</option>
+                    <option>ЖК Квартал 7</option>
+                    <option>ЖК Квартал 7</option>
+                    <option>ЖК Квартал 7</option>
+                  </select>
+                </div>
+              </div>
+                <div class="fild">
+               <span>Сотрудник</span>
+                 <div class="form-item">
+                  <select name="worker_id" id="worker_id" tabindex="1">
+                    <option>Фамилия Имя Отчество </option>
+                    <option>Иванова Ольга Константиновна</option>
+                    <option>Иванова Ольга Константиновна</option>
+                    <option>Иванова Ольга Константиновна</option>
+                    <option>Иванова Ольга Константиновна</option>
+                    <option>Иванова Ольга Константиновна</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fild">
+               <span>Статус ответа</span>
+                 <div class="form-item">
+                  <ul class="status">                
+                    <li>
+                      <label for="checkbox1">
+                        <input type="checkbox" name="Checkbox" id="checkbox1" value="1" />Да
+                      </label>
+                    </li>
+                    <li>
+                      <label for="checkbox2">
+                        <input type="checkbox" name="Checkbox" id="checkbox2" value="2" />Нет
+                      </label>
+                    </li>
+                    <li>
+                      <label for="checkbox3">
+                        <input type="checkbox" name="Checkbox" id="checkbox3" value="3" />Нет (сбой)
+                     </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+           </div>
+          <div class="row">
+            <div class="fild data">
+              <span>Дата поступления</span>
+              <div class="form-item">
+                <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)">
+              </div>
+            </div>
+            <div class="fild time">
+              <span>Период времени</span>
+              <div class="form-item">
+                <div class="formCost">
+                  <label for="minCost">c</label> <input type="text" id="minCost" value="00:00"/>
+                  <div class="sliderCont">
+                    <div id="slider"></div>
+                  </div>
+                  <label for="maxCost">до</label> <input type="text" id="maxCost" value="00:15"/>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="row">
+            <div class="fild data">
+              <span>Дата ответа</span>
+              <div class="form-item">
+                <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)">
+              </div>
+            </div>
+            <div class="fild time">
+              <span>Период времени</span>
+              <div class="form-item">
+                <div class="formCost">
+                  <label for="minCost1">c</label> <input type="text" id="minCost1" value="00:00"/>
+                  <div class="sliderCont">
+                    <div id="slider1"></div>
+                  </div>
+                  <label for="maxCost1">до</label> <input type="text" id="maxCost1" value="00:15"/>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="fild type-request">
+               <span>Тип запроса</span>
+                 <div class="form-item">
+                  <ul class="status">                
+                    <li>
+                      <label for="checkbox21">
+                        <input type="checkbox" name="Checkbox1" id="checkbox21" value="5" />Уведомление
+                      </label>
+                    </li>
+                    <li>
+                      <label for="checkbox22">
+                        <input type="checkbox" name="Checkbox1" id="checkbox22" value="3" />Просмотр
+                      </label>
+                    </li>
+                    <li>
+                      <label for="checkbox23">
+                        <input type="checkbox" name="Checkbox1" id="checkbox23" value="4" />Бронирование
+                     </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="fild btn">
+                <div class="res-btn reset">
+                  <button>Очистить фильтр</button>
+                </div>
+                <div class="sub-btn">
+                  <button type="submit" >Найти</button>
+                </div>
+              </div>
+            </div>
+         </form>
+      </div>
+<!-- Table -->
+<div class="table-wrap">
+        <table class="result-table">
+          <tbody>
+            <tr>
+              <th class="first-head">Срочно</th>
+              <th>Дата поступления</th>
+              <th>Когда надо ответить?</th>
+              <th>ФИО сотрудника</th>
+              <th>Дан ли ответ?</th>
+              <th>Удобное время</th>
+              <th>ФИО</th>
+              <th>Новостройка</th>
+              <th class="last-head">Тип запроса</th>
+            </tr>
+            <tr class="true first-td">
+              <td><a href="#">Да</a></td>
+              <td><a href="#">12:35  14.04.2015</a></td>
+              <td>13:00  <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)"></td>
+              <td><a href="#">Иванова...</a></td>
+              <td><a href="#">Да</a></td>
+              <td><a href="#">15:00  04.03.2015</a></td>
+              <td><a href="#">Чертованов...</a></td>
+              <td><a href="#">ЖК Название</a></td>
+              <td><a href="#">Уведомление</a></td>
+            </tr>
+            <tr class="true">
+              <td><a href="#">Да</a></td>
+              <td><a href="#">13:00  14.04.2015</a></td>
+              <td>13:00  <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)"></td>
+              <td><a href="#">Иванова...</a></td>
+              <td><a href="#">Да</a></td>
+              <td><a href="#">Неважно</a></td>
+              <td><a href="#">Марсонова...</a></td>
+              <td><a href="#">ЖК Название</a></td>
+              <td><a href="#">Просмотр</a></td>
+            </tr>
+            <tr class="true">
+              <td><a href="#">Да</a></td>
+              <td><a href="#">13:15  14.04.2015</a></td>
+              <td>13:00  <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)"></td>
+              <td><a href="#">Иванова...</a></td>
+              <td><a href="#">Нет (сбой)</a></td>
+              <td><a href="#">15:00-17:00</a></td>
+              <td><a href="#">Валидбеков...</a></td>
+              <td><a href="#">ЖК Название</a></td>
+              <td><a href="#">Бронирование</a></td>
+            </tr>
+            <tr>
+              <td><a href="#">Нет</a></td>
+              <td><a href="#">12:04  14.04.2015</a></td>
+            <td>13:00  <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)"></td>
+              <td><a href="#">Иванова...</a></td>
+              <td><a href="#">Нет</a></td>
+              <td><a href="#">В любое время...</a></td>
+              <td><a href="#">Ратиева Нат...</a></td>
+              <td><a href="#">ЖК Название</a></td>
+              <td><a href="#">Просмотр</a></td>
+            </tr>
+            <tr>
+              <td class="first-bottom"><a href="#">Нет</a></td>
+              <td><a href="#">12:04  14.04.2015</a></td>
+              <td>13:00  <input type="text" value="16.04.2015" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)"></td>
+              <td><a href="#">Иванова...</a></td>
+              <td><a href="#">Нет</a></td>
+              <td><a href="#">В любое время...</a></td>
+              <td><a href="#">Коган Евген...</a></td>
+              <td><a href="#">ЖК Название</a></td>
+              <td class="last-bottom"><a href="#">Просмотр</a></td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+        <ul class="pagination">
+          <li><a href="#">&lt;</a></li>
+          <li><a href="#" class="active">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><span class="count">&hellip;</span></li>
+          <li><a href="#">12</a></li>
+          <li><a href="#">&gt;</a></li>
+        </ul>
+<!-- End table -->
+     </div>
+   </div>
+   <script type="text/javascript" src="js/jquery.selectbox-0.2.js"></script>
+    <script type="text/javascript">
+    $(function () {
+      $("#house_id").selectbox();
+       $("#worker_id").selectbox();
+    });
+    </script>
+    <script type="text/javascript">
+jQuery(function (){
+jQuery('input#maxCost,input#minCost').timepicker({
+    hourText: 'Часы',
+    minuteText: 'Минуты',
+    amPmText: ['AM', 'PM'],
+    timeSeparator: ':',
+    nowButtonText: 'Сейчас',
+    showNowButton: true,
+    closeButtonText: 'Закрыть',
+    showCloseButton: true,
+    deselectButtonText: 'Очистить',
+    showDeselectButton: true
+});
+});
+jQuery("#slider").slider({
+  min: 0,
+  max: 1440,
+  values: [0,24],
+  range: true,
+  step:5,
+  change: function(event, ui){
+    var time_min, time_max;
+      time_min=getTime(ui.values[0]);
+      time_max=getTime(ui.values[1])
+    jQuery("input#minCost").val(time_min['h']+':'+time_min['m']);
+    jQuery("input#maxCost").val(time_max['h']+':'+time_max['m']);
+  } 
+});
+jQuery("input#maxCost,input#minCost").change(function(){
+  var curr,curr_val, hours, minutes,target,value=jQuery(this).val();
+  curr=jQuery("#slider").slider("values");
+  target=$(this).attr('id');
+  target=target.slice(0,3);
+  hours=value.slice(0,value.indexOf(':'))-0;
+  minutes=value.slice(value.indexOf(':')+1)-0;
+  value=hours*60+minutes;
+  if( target === 'min' ){
+    target=0;
+    curr_val=curr[1];
+    value=(value < curr_val)? value : curr_val-5;
+  }else{
+    target=1;
+    curr_val=curr[0];
+    value=(value > curr_val)? value : curr_val+5;
+  } 
+  jQuery("#slider").slider("values",target,value);
+});
+
+function getTime(time){
+   var hours, minutes, time_obj={};
+   hours = Math.floor(time / 60)+'';
+   minutes = time - (hours* 60)+'';
+  time_obj['h']=hours;
+  time_obj['m']=minutes;
+  for(var key in time_obj){
+    if(time_obj[key] == 0){
+      time_obj[key]='00';
+    }
+    if(time_obj[key].length == 1){
+      time_obj[key]='0'+time_obj[key];
+    }
+  }
+  return time_obj;
+}
+</script>
+<script type="text/javascript">
+jQuery(function (){
+jQuery('input#maxCost1,input#minCost1').timepicker({
+    hourText: 'Часы',
+    minuteText: 'Минуты',
+    amPmText: ['AM', 'PM'],
+    timeSeparator: ':',
+    nowButtonText: 'Сейчас',
+    showNowButton: true,
+    closeButtonText: 'Закрыть',
+    showCloseButton: true,
+    deselectButtonText: 'Очистить',
+    showDeselectButton: true
+});
+});
+jQuery("#slider1").slider({
+  min: 0,
+  max: 1440,
+  values: [0,24],
+  range: true,
+  step:5,
+  change: function(event, ui){
+    var time_min, time_max;
+      time_min=getTime(ui.values[0]);
+      time_max=getTime(ui.values[1])
+    jQuery("input#minCost1").val(time_min['h']+':'+time_min['m']);
+    jQuery("input#maxCost1").val(time_max['h']+':'+time_max['m']);
+  } 
+});
+jQuery("input#maxCost1,input#minCost1").change(function(){
+  var curr,curr_val, hours, minutes,target,value=jQuery(this).val();
+  curr=jQuery("#slider1").slider("values");
+  target=$(this).attr('id');
+  target=target.slice(0,3);
+  hours=value.slice(0,value.indexOf(':'))-0;
+  minutes=value.slice(value.indexOf(':')+1)-0;
+  value=hours*60+minutes;
+  if( target === 'min' ){
+    target=0;
+    curr_val=curr[1];
+    value=(value < curr_val)? value : curr_val-5;
+  }else{
+    target=1;
+    curr_val=curr[0];
+    value=(value > curr_val)? value : curr_val+5;
+  } 
+  jQuery("#slider1").slider("values",target,value);
+});
+
+function getTime(time){
+   var hours, minutes, time_obj={};
+   hours = Math.floor(time / 60)+'';
+   minutes = time - (hours* 60)+'';
+  time_obj['h']=hours;
+  time_obj['m']=minutes;
+  for(var key in time_obj){
+    if(time_obj[key] == 0){
+      time_obj[key]='00';
+    }
+    if(time_obj[key].length == 1){
+      time_obj[key]='0'+time_obj[key];
+    }
+  }
+  return time_obj;
+}
+</script>
+
+
+
+
+
+ <script type="text/javascript">
+$(document).ready(function(){
+  $('.reset').click(function() {
+    $('.customForm').find('input').val('');
+    $('.customForm').find('input:checked').removeAttr('checked');
+    $('.customForm').find('.check').removeClass('active');
+    $('.customForm').find('.radio').removeClass('active');
+    $('.customForm').find('textarea').val('');
+    $('.customForm').find('.slct').html('Выберите Ваше лучшее качество:');
+    return false
+  });
+  $('#file').change(function(){
+    var fileResult = $(this).val();
+    $(this).parent().find('.fileLoad').find('input').val(fileResult);
+  });
+  $('#file').hover(function(){
+    $(this).parent().find('button').addClass('button-hover');
+  }, function(){
+    $(this).parent().find('button').removeClass('button-hover');
+  });
+  $('.checkboxes').find('.check').click(function(){
+    if( $(this).find('input').is(':checked') ) {
+      $(this).removeClass('active');
+      $(this).find('input').removeAttr('checked');
+    } else {
+      $(this).addClass('active');
+      $(this).find('input').attr('checked', true);
+    }
+  });
+  $('.slct').click(function(){
+    var dropBlock = $(this).parent().find('.drop');
+    if( dropBlock.is(':hidden') ) {
+      dropBlock.slideDown();
+      $(this).addClass('active');
+      $('.drop').find('li').click(function(){
+        var selectResult = $(this).html();
+        $(this).parent().parent().find('input').val(selectResult);
+        $('.slct').removeClass('active').html(selectResult);
+        dropBlock.slideUp();
+      });
+    } else {
+      $(this).removeClass('active');
+      dropBlock.slideUp();
+    }
+    return false;
+  }); 
+  $('.radioblock').find('.radio').click(function(){
+    var valueRadio = $(this).html();
+    $(this).parent().find('.radio').removeClass('active');
+    $(this).addClass('active');
+    $(this).parent().find('input').val(valueRadio);
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+  </body>
+</html>

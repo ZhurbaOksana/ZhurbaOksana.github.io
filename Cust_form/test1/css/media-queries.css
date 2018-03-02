@@ -1,0 +1,59 @@
+@media only screen and (max-width : 790px) {
+#header form span{padding: 0; height: 33px;}
+.data span, .data .form-item {width: 102px;}
+.row .data{width: 204px;}
+.formCost input{margin-right: 7px;}
+.result-table tr td a {font-size:12px;}
+.result-table input{background:none;}
+}
+@media only screen and (max-width : 847px) {
+.top-box div{padding-top: 12px;}
+.top-box{padding: 10px 0 0;}
+.top-box a{ padding: 10px 2%;}
+.result-table th {font-size: 12px;}
+  }
+@media only screen and (max-width : 831px) {.requests h2{padding-top:0;}}
+@media only screen and (max-width :972px) {
+.navigation{font:12px/14px "MyriadPro-Bold", Arial, Helvetica, sans-serif; }
+.navigation ul li{width: 24%;}
+.row .time{width: 65%;}
+.sliderCont {width: 60%;}
+.row .type-request {margin-right:0;width: 60%;}
+.result-table input{width:70%;}
+} 
+ @media only screen and (max-width :915px) {.result-table input{width:100%;}}
+@media only screen and (max-width : 795px) {
+  
+  .row .type-request {width: 70%;}
+  }
+@media only screen and (max-width :1000px) {
+.form-item .status li {
+margin-left: 1%;
+margin-right: 1%}
+}
+@media only screen and (max-width :970px) {
+.fild {
+width: 46.5%;
+margin-left: 1.5%;
+margin-right: 1.5%;
+}
+}
+@media only screen and (max-width : 745px) {
+.result-table th,.result-table tr td a {font-size: 11px;}
+}
+@media only screen and (max-width :700px) {
+.row .time {width:455px;}
+.result-table th,.result-table tr td a {font-size: 10px;}
+}
+@media only screen and (max-width :650px) {
+.status {font: 12px/16px "MyriadPro-Regular", Arial, Helvetica, sans-serif;}
+.result-table th,.result-table tr td a {font-size: 9px;}
+}
+@media only screen and (max-width : 795px) {
+  
+  .row .type-request {width: 80%;}
+  }
+  @media only screen and (max-width : 615px) {
+.top-box{font:13px/16px "MyriadPro-Bold", Arial, Helvetica, sans-serif;}
+.result-table th,.result-table tr td a {font-size: 8.5px;} 
+}
